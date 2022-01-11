@@ -4,6 +4,7 @@ import { NavLink as Link, Switch, Route } from 'react-router-dom';
 // import child components
 import { Counter } from '../counter';
 import { Post } from '../post';
+import { Test } from '../test';
 
 // export entry application component
 export class App extends React.Component {
@@ -33,6 +34,13 @@ export class App extends React.Component {
                         to='/post'
                         exact={ true }
                     >Post</Link>
+
+                    <Link
+                      className='ui-app__navigation__link'
+                      activeClassName='ui-app__navigation__link--active'
+                      to='/test'
+                      exact={ true }
+                    >Test</Link>
                 </div>
 
                 <Switch>
@@ -46,6 +54,12 @@ export class App extends React.Component {
                         path='/post'
                         exact={ true }
                         component={ Post }
+                    />
+
+                    <Route
+                      path='/test'
+                      exact={ true }
+                      component={ Test }
                     />
                 </Switch>
                 
